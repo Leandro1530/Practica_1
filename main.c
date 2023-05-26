@@ -7,3 +7,9 @@ struct pelicula {
     int anio;
     char director[50];
 };
+
+void cargarPelicula(struct pelicula* p);
+
+int main(){
+
+}
