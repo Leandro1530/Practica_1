@@ -9,7 +9,8 @@ struct pelicula {
 };
 
 void cargarPelicula(struct pelicula* p);
-
+void modificarPelicula(struct pelicula* p);
+void listarPeliculas(struct pelicula* peliculas, int numPeliculas);
 int main(){
 
 }
