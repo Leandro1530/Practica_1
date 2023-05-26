@@ -11,6 +11,15 @@ struct pelicula {
 void cargarPelicula(struct pelicula* p);
 void modificarPelicula(struct pelicula* p);
 void listarPeliculas(struct pelicula* peliculas, int numPeliculas);
-int main(){
+void menu();
 
+int main(){
+return 0;
+}
+
+void menu() {
+    printf("1. Cargar película\n");
+    printf("2. Modificar película\n");
+    printf("3. Listar películas\n");
+    printf("4. Salir\n");
 }
