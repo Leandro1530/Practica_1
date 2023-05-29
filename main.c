@@ -13,8 +13,40 @@ void modificarPelicula(struct pelicula* p);
 void listarPeliculas(struct pelicula* peliculas, int numPeliculas);
 void menu();
 
-int main(){
-return 0;
+int main(){struct pelicula peliculas[100];
+    int numPeliculas = 0;
+
+    int opcion;
+    do {
+        menu();
+        printf("Ingrese una opción: ");
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1:
+                cargarPelicula(&peliculas[numPeliculas]);
+                numPeliculas++;
+                break;
+            case 2:
+                int indice;
+                    printf("Ingrese el número de película a modificar: ");
+                    scanf("%d", &indice);
+                    modificarPelicula(&peliculas[indice - 1]);
+                break;
+            case 3:
+                listarPeliculas(peliculas, numPeliculas);
+                break;
+            case 4:
+                printf("Saliendo...\n");
+                break;
+            default:
+                printf("Opción incorrecta.\n");
+                break;
+        }
+        printf("\n");
+    } while (opcion != 4);
+
+    return 0;
 }
 
 
