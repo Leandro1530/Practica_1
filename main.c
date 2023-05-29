@@ -15,7 +15,7 @@ void menu();
 
 int main(){struct pelicula peliculas[100];
     int numPeliculas = 0;
-
+    int indice;
     int opcion;
     do {
         menu();
@@ -28,10 +28,9 @@ int main(){struct pelicula peliculas[100];
                 numPeliculas++;
                 break;
             case 2:
-                int indice;
-                    printf("Ingrese el número de película a modificar: ");
-                    scanf("%d", &indice);
-                    modificarPelicula(&peliculas[indice - 1]);
+                printf("Ingrese el número de película a modificar: ");
+                scanf("%d", &indice);
+                modificarPelicula(&peliculas[indice]);
                 break;
             case 3:
                 listarPeliculas(peliculas, numPeliculas);
