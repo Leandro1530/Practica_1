@@ -52,8 +52,32 @@ void cargarPelicula(struct pelicula* p) {
 
     printf("Ingrese el anio de la pelicula: ");
     scanf("%d", &p->anio);
-    
+
     printf("Ingrese el nombre del director: ");
     scanf(" %[^\n]s", p->director);
 
+}
+
+
+
+
+void modificarPelicula(struct pelicula* p) {
+    printf("\n\n");
+    printf("   *** Modificar de pelicula ***");
+    printf("\n\n");
+
+    printf(" - Ingrese el titulo: ");
+    scanf(" %[^\n]s", p->titulo);
+
+    printf(" - Ingrese el genero: ");
+    scanf(" %[^\n]s", p->genero);
+
+    printf(" - Ingrese la duracion (en minutos): ");
+    scanf("%d", &p->duracion);
+
+    printf(" - Ingrese el anio de la pelicula: ");
+    scanf("%d", &p->anio);
+
+    printf(" - Ingrese el nombre del director: ");
+    scanf(" %[^\n]s", p->director);
 }
