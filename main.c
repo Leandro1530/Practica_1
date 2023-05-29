@@ -90,9 +90,6 @@ void cargarPelicula(struct pelicula* p) {
 
 }
 
-
-
-
 void modificarPelicula(struct pelicula* p) {
     printf("\n\n");
     printf("   *** Modificar de pelicula ***");
@@ -112,4 +109,17 @@ void modificarPelicula(struct pelicula* p) {
 
     printf(" - Ingrese el nombre del director: ");
     scanf(" %[^\n]s", p->director);
+}
+
+void listarPeliculas(struct pelicula* peliculas, int numPeliculas) {
+    printf("Lista de películas:\n");
+    for (int i = 0; i < numPeliculas; i++) {
+        printf("Película %d:\n", i + 1);
+        printf("Título: %s\n", peliculas[i].titulo);
+        printf("Género: %s\n", peliculas[i].genero);
+        printf("Duración: %d minutos\n", peliculas[i].duracion);
+        printf("Año: %d\n", peliculas[i].anio);
+        printf("Director: %s\n", peliculas[i].director);
+        printf("\n");
+    }
 }
