@@ -17,11 +17,22 @@ int main(){
 return 0;
 }
 
+
+
 void menu() {
-    printf("1. Cargar película\n");
-    printf("2. Modificar película\n");
-    printf("3. Listar películas\n");
-    printf("4. Salir\n");
+
+    printf("////////////////////////////////////////////////////////////////////////////////////////////////");
+    printf("\n\n\n");
+    printf("--------------------------------------------------\n");
+    printf("|   ~~ ADMINSTRADOR DE CARTELERA CINEMA BUG ~~   |\n");
+    printf("--------------------------------------------------\n");
+    printf("\n");
+    printf("   *** MENU ***");
+    printf("\n\n");
+    printf("1. Cargar pelicula\n");
+    printf("2. Modificar pelicula\n");
+    printf("3. Listar peliculas\n");
+    printf("4. Salir\n\n");
 }
 
 void cargarPelicula(struct pelicula* p) {
@@ -44,4 +55,5 @@ void cargarPelicula(struct pelicula* p) {
     
     printf("Ingrese el nombre del director: ");
     scanf(" %[^\n]s", p->director);
+
 }
