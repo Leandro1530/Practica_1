@@ -8,15 +8,17 @@ struct pelicula {
     char director[50];
 };
 
-void cargarPelicula(struct pelicula* p, int id);
+void cargarPelicula(struct pelicula* p, int indice);
 void modificarPelicula(struct pelicula* p);
 void listarPeliculas(struct pelicula* peliculas, int numPeliculas);
 void menu();
 
-int main(){struct pelicula peliculas[100];
+int main(){
+    struct pelicula peliculas[100];
     int numPeliculas = 0;
     int indice;
     int opcion;
+
     do {
         menu();
         printf("Ingrese una opción: ");
@@ -28,7 +30,7 @@ int main(){struct pelicula peliculas[100];
                 numPeliculas++;
                 break;
             case 2:
-                printf("Ingrese el número de película a modificar: ");
+                printf("Ingrese el numero de pelicula a modificar: ");
                 scanf("%d", &indice);
                 modificarPelicula(&peliculas[indice]);
                 break;
@@ -48,10 +50,7 @@ int main(){struct pelicula peliculas[100];
     return 0;
 }
 
-
-
 void menu() {
-
     printf("////////////////////////////////////////////////////////////////////////////////////////////////");
     printf("\n\n\n");
     printf("--------------------------------------------------\n");
@@ -66,13 +65,12 @@ void menu() {
     printf("4. Salir\n\n");
 }
 
-void cargarPelicula(struct pelicula* p, int id) {
-
+void cargarPelicula(struct pelicula* p, int indice) {
     printf("\n\n");
     printf("   *** Carga de pelicula ***");
     printf("\n");
 
-    printf(" - ID: %d \n", id);
+    printf(" - Indice: %d \n", indice);
     printf(" - Ingrese el titulo: ");
     scanf(" %[^\n]s", p->titulo);
     printf(" - Ingrese el genero: ");
