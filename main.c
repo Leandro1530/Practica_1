@@ -8,7 +8,7 @@ struct pelicula {
     char director[50];
 };
 
-void cargarPelicula(struct pelicula* p);
+void cargarPelicula(struct pelicula* p, int id);
 void modificarPelicula(struct pelicula* p);
 void listarPeliculas(struct pelicula* peliculas, int numPeliculas);
 void menu();
@@ -24,7 +24,7 @@ int main(){struct pelicula peliculas[100];
 
         switch (opcion) {
             case 1:
-                cargarPelicula(&peliculas[numPeliculas]);
+                cargarPelicula(&peliculas[numPeliculas], numPeliculas);
                 numPeliculas++;
                 break;
             case 2:
@@ -66,25 +66,22 @@ void menu() {
     printf("4. Salir\n\n");
 }
 
-void cargarPelicula(struct pelicula* p) {
+void cargarPelicula(struct pelicula* p, int id) {
 
     printf("\n\n");
     printf("   *** Carga de pelicula ***");
     printf("\n");
 
-    printf("Ingrese el titulo: ");
+    printf(" - ID: %d \n", id);
+    printf(" - Ingrese el titulo: ");
     scanf(" %[^\n]s", p->titulo);
-
-    printf("Ingrese el genero: ");
+    printf(" - Ingrese el genero: ");
     scanf(" %[^\n]s", p->genero);
-
-    printf("Ingrese la duracion (en minutos): ");
+    printf(" - Ingrese la duracion (en minutos): ");
     scanf("%d", &p->duracion);
-
-    printf("Ingrese el anio de la pelicula: ");
+    printf(" - Ingrese el anio de la pelicula: ");
     scanf("%d", &p->anio);
-
-    printf("Ingrese el nombre del director: ");
+    printf(" - Ingrese el nombre del director: ");
     scanf(" %[^\n]s", p->director);
 
 }
@@ -96,29 +93,28 @@ void modificarPelicula(struct pelicula* p) {
 
     printf(" - Ingrese el titulo: ");
     scanf(" %[^\n]s", p->titulo);
-
     printf(" - Ingrese el genero: ");
     scanf(" %[^\n]s", p->genero);
-
     printf(" - Ingrese la duracion (en minutos): ");
     scanf("%d", &p->duracion);
-
     printf(" - Ingrese el anio de la pelicula: ");
     scanf("%d", &p->anio);
-
     printf(" - Ingrese el nombre del director: ");
     scanf(" %[^\n]s", p->director);
 }
 
 void listarPeliculas(struct pelicula* peliculas, int numPeliculas) {
-    printf("Lista de películas:\n");
+    printf("\n\n");
+    printf("   *** Lista de peliculas ***");
+    printf("\n\n");
+
     for (int i = 0; i < numPeliculas; i++) {
-        printf("Película %d:\n", i + 1);
-        printf("Título: %s\n", peliculas[i].titulo);
-        printf("Género: %s\n", peliculas[i].genero);
-        printf("Duración: %d minutos\n", peliculas[i].duracion);
-        printf("Año: %d\n", peliculas[i].anio);
-        printf("Director: %s\n", peliculas[i].director);
+        printf(" - Pelicula %d:\n", i + 1);
+        printf(" - Titulo: %s\n", peliculas[i].titulo);
+        printf(" - Genero: %s\n", peliculas[i].genero);
+        printf(" - Duracion: %d minutos\n", peliculas[i].duracion);
+        printf(" - Anio: %d\n", peliculas[i].anio);
+        printf(" - Director: %s\n", peliculas[i].director);
         printf("\n");
     }
 }
