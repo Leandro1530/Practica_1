@@ -14,14 +14,14 @@ void listarPeliculas(struct pelicula* peliculas, int numPeliculas);
 void menu();
 
 int main(){
-    struct pelicula peliculas[100];
+    struct pelicula peliculas[10];
     int numPeliculas = 0;
     int indice;
     int opcion;
 
     do {
         menu();
-        printf("Ingrese una opción: ");
+        printf("Ingrese una opcion: ");
         scanf("%d", &opcion);
 
         switch (opcion) {
@@ -41,7 +41,7 @@ int main(){
                 printf("Saliendo...\n");
                 break;
             default:
-                printf("Opción incorrecta.\n");
+                printf("Opcion incorrecta.\n");
                 break;
         }
         printf("\n");
@@ -107,7 +107,7 @@ void listarPeliculas(struct pelicula* peliculas, int numPeliculas) {
     printf("\n\n");
 
     for (int i = 0; i < numPeliculas; i++) {
-        printf(" - Pelicula %d:\n", i + 1);
+        printf(" - Pelicula %d:\n", i);
         printf(" - Titulo: %s\n", peliculas[i].titulo);
         printf(" - Genero: %s\n", peliculas[i].genero);
         printf(" - Duracion: %d minutos\n", peliculas[i].duracion);
