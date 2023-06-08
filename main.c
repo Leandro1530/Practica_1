@@ -11,6 +11,7 @@ struct pelicula {
 void cargarPelicula(struct pelicula* p, int indice);
 void modificarPelicula(struct pelicula* p);
 void listarPeliculas(struct pelicula* peliculas, int numPeliculas);
+void ordenamientoBurbujaPorAnio(struct pelicula* peliculas, int numPeliculas);
 void menu();
 
 int main(){
@@ -37,6 +38,7 @@ int main(){
             case 3:
                 listarPeliculas(peliculas, numPeliculas);
                 break;
+            
             case 4:
                 printf("Saliendo...\n");
                 break;
@@ -115,4 +117,16 @@ void listarPeliculas(struct pelicula* peliculas, int numPeliculas) {
         printf(" - Director: %s\n", peliculas[i].director);
         printf("\n");
     }
+}
+
+void ordenamientoBurbujaPorAnio(struct pelicula* peliculas, int numPeliculas){
+    for (i=0; i<numPeliculas - 1; i++){
+        for (j=0 ; j<numPeliculas - 1; j++){
+            if (peliculas[j].anio > peliculas[j+1].anio){
+                aux = peliculas[j];
+                peliculas[j] = peliculas[j+1];
+                peliculas[j+1] = aux;
+            }
+        }
+    }
 }
