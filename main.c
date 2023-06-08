@@ -38,8 +38,10 @@ int main(){
             case 3:
                 listarPeliculas(peliculas, numPeliculas);
                 break;
-            
             case 4:
+                ordenamientoBurbujaPorAnio(peliculas, numPeliculas);
+                break;
+            case 5:
                 printf("Saliendo...\n");
                 break;
             default:
